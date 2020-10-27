@@ -2,6 +2,8 @@
 
 **An EC2 instance is querying a domain name that is associated with a known command and control server.**
 
+**OPSEC Guidelines**
+
 **Default severity: High**
 
 This finding informs you that the listed instance within your AWS environment is querying a domain name associated with a known command and control (C&amp;C) server. The listed instance might be compromised. Command and control servers are computers that issue commands to members of a botnet. A botnet is a collection of internet-connected devices which might include PCs, servers, mobile devices, and Internet of Things devices, that are infected and controlled by a common type of malware. Botnets are often used to distribute malware and gather misappropriated information, such as credit card numbers. Depending on the purpose and structure of the botnet, the C&amp;C server might also issue commands to begin a distributed denial-of-service (DDoS) attack.
@@ -18,6 +20,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **An EC2 instance is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using the DNS protocol.**
 
+**OPSEC Guidelines**
+
 **Default severity: High**
 
 This finding informs you that the listed EC2 instance within your AWS environment is generating a large volume of outbound DNS traffic. This may indicate that the listed instance is compromised and being used to perform denial-of-service (DoS) attacks using DNS protocol.
@@ -31,6 +35,8 @@ This finding detects DoS attacks only against publicly routable IP addresses, wh
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Backdoor:EC2/DenialOfService.Tcp
+
+**OPSEC Guidelines**
 
 **An EC2 instance is behaving in a manner indicating it is being used to perform a Denial of Service (DoS) attack using the TCP protocol.**
 
@@ -48,6 +54,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Backdoor:EC2/DenialOfService.Udp
 
+**OPSEC Guidelines**
+
 **An EC2 instance is behaving in a manner indicating it is being used to perform a Denial of Service (DoS) attack using the UDP protocol.**
 
 **Default severity: High**
@@ -63,6 +71,8 @@ This finding detects DoS attacks only against publicly routable IP addresses, wh
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Backdoor:EC2/DenialOfService.UdpOnTcpPorts
+
+**OPSEC Guidelines**
 
 **An EC2 instance is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using the UDP protocol on a TCP port.**
 
@@ -80,6 +90,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Backdoor:EC2/DenialOfService.UnusualProtocol
 
+**OPSEC Guidelines**
+
 **An EC2 instance is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using an unusual protocol.**
 
 **Default severity: High**
@@ -91,6 +103,8 @@ This finding informs you that the listed EC2 instance in your AWS environment is
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Backdoor:EC2/Spambot
+
+**OPSEC Guidelines**
 
 **An EC2 instance is exhibiting unusual behavior by communicating with a remote host on port 25.**
 
@@ -104,6 +118,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Behavior:EC2/NetworkPortUnusual
 
+**OPSEC Guidelines**
+
 **An EC2 instance is communicating with a remote host on an unusual server port.**
 
 **Default severity: Medium**
@@ -115,6 +131,8 @@ This finding informs you that the listed EC2 instance in your AWS environment is
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Behavior:EC2/TrafficVolumeUnusual
+
+**OPSEC Guidelines**
 
 **An EC2 instance is generating unusually large amounts of network traffic to a remote host.**
 
@@ -128,6 +146,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## CryptoCurrency:EC2/BitcoinTool.B
 
+**OPSEC Guidelines**
+
 **An EC2 instance is querying an IP address that is associated with cryptocurrency-related activity.**
 
 **Default severity: High**
@@ -138,7 +158,9 @@ This finding informs you that the listed EC2 instance in your AWS environment is
 
 If you use this EC2 instance to mine or manage cryptocurrency, or this instance is otherwise involved in blockchain activity, this finding could represented expected activity for your environment. If this is the case in your AWS environment, we recommend that you set up a suppression rule for this finding. The suppression rule should consist of two filter criteria. The first criteria should use the¬† **Finding type** ¬†attribute with a value of¬†CryptoCurrency:EC2/BitcoinTool.B!DNS. The second filter criteria should be the¬† **Instance ID** ¬†of the instance involved in blockchain activity. To learn more about creating suppression rules see¬†[Suppression rules](https://docs.aws.amazon.com/guardduty/latest/ug/findings_suppression-rule.html).
 
-CryptoCurrency:EC2/BitcoinTool.B!DNS
+## CryptoCurrency:EC2/BitcoinTool.B!DNS
+
+**OPSEC Guidelines**
 
 **An EC2 instance is querying a domain name that is associated with cryptocurrency-related activity.**
 
@@ -152,6 +174,8 @@ If you use this EC2 instance to mine or manage cryptocurrency, or this instance 
 
 ## Impact:EC2/PortSweep
 
+**OPSEC Guidelines**
+
 **An EC2 instance is probing a port on a large number of IP addresses.**
 
 **Default severity: High**
@@ -163,6 +187,8 @@ This finding informs you the listed EC2 instance in your AWS environment is prob
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Impact:EC2/WinRMBruteForce
+
+**OPSEC Guidelines**
 
 **An EC2 instance is performing an outbound Windows Remote Management brute force attack.**
 
@@ -176,6 +202,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Recon:EC2/PortProbeEMRUnprotectedPort
 
+**OPSEC Guidelines**
+
 **An EC2 instance has an unprotected EMR related port which is being probed by a known malicious host.**
 
 **Default severity: High**
@@ -187,6 +215,8 @@ This finding informs you that an EMR related sensitive port on the listed EC2 in
 You should block open access to ports on clusters from the internet and restrict access only to specific IP addresses that require access to these ports. For more information see,¬†[Security Groups for EMR Clusters](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-groups.html).
 
 ## Recon:EC2/PortProbeUnprotectedPort
+
+**OPSEC Guidelines**
 
 **An EC2 instance has an unprotected port that is being probed by a known malicious host.**
 
@@ -208,6 +238,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Recon:EC2/Portscan
 
+**OPSEC Guidelines**
+
 **An EC2 instance is performing outbound port scans to a remote host.**
 
 **Default severity: Medium**
@@ -222,6 +254,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/BlackholeTraffic
 
+**OPSEC Guidelines**
+
 **An EC2 instance is attempting to communicate with an IP address of a remote host that is a known black hole.**
 
 **Default severity: Medium**
@@ -234,6 +268,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/BlackholeTraffic!DNS
 
+**OPSEC Guidelines**
+
 **An EC2 instance is querying a domain name that is being redirected to a black hole IP address.**
 
 **Default severity: Medium**
@@ -245,6 +281,8 @@ This finding informs you the listed EC2 instance in your AWS environment might b
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Trojan:EC2/DGADomainRequest.B
+
+**OPSEC Guidelines**
 
 **An EC2 instance is querying algorithmically generated domains. Such domains are commonly used by malware and could be an indication of a compromised EC2 instance.**
 
@@ -264,6 +302,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/DGADomainRequest.C!DNS
 
+**OPSEC Guidelines**
+
 **An EC2 instance is querying algorithmically generated domains. Such domains are commonly used by malware and could be an indication of a compromised EC2 instance.**
 
 **Default severity: High**
@@ -282,6 +322,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/DNSDataExfiltration
 
+**OPSEC Guidelines**
+
 **An EC2 instance is exfiltrating data through DNS queries.**
 
 **Default severity: High**
@@ -293,6 +335,8 @@ This finding informs you that the listed EC2 instance in your AWS environment is
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Trojan:EC2/DriveBySourceTraffic!DNS
+
+**OPSEC Guidelines**
 
 **An EC2 instance is querying a domain name of a remote host that is a known source of Drive-By download attacks.**
 
@@ -306,6 +350,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/DropPoint
 
+**OPSEC Guidelines**
+
 **An EC2 instance is attempting to communicate with an IP address of a remote host that is known to hold credentials and other stolen data captured by malware.**
 
 **Default severity: Medium**
@@ -317,6 +363,8 @@ This finding informs you that an EC2 instance in your AWS environment is trying 
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## Trojan:EC2/DropPoint!DNS
+
+**OPSEC Guidelines**
 
 **An EC2 instance is querying a domain name of a remote host that is known to hold credentials and other stolen data captured by malware.**
 
@@ -330,6 +378,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## Trojan:EC2/PhishingDomainRequest!DNS
 
+**OPSEC Guidelines**
+
 **An EC2 instance is querying domains involved in phishing attacks. Your EC2 instance might be compromised.**
 
 **Default severity: High**
@@ -342,6 +392,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 ## UnauthorizedAccess:EC2/MaliciousIPCaller.Custom
 
+**OPSEC Guidelines**
+
 **An EC2 instance is making connections to an IP address on a custom threat list.**
 
 **Default severity: Medium**
@@ -353,6 +405,8 @@ This finding informs you that an EC2 instance in your AWS environment is communi
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## UnauthorizedAccess:EC2/MetadataDNSRebind
+
+**OPSEC Guidelines**
 
 **An EC2 instance is performing DNS lookups that resolve to the instance metadata service.**
 
@@ -372,6 +426,8 @@ Some AWS customers intentionally map the metadata IP address to a domain name on
 
 ## UnauthorizedAccess:EC2/RDPBruteForce
 
+**OPSEC Guidelines**
+
 **An EC2 instance has been involved in RDP brute force attacks.**
 
 **Default severity: Low\***
@@ -389,6 +445,8 @@ If your instance&#39;s¬† **Resource Role** ¬†is¬†ACTOR, this indicates 
 If your instance&#39;s¬† **Resource Role** ¬†is¬†TARGET, this finding can be remediated by securing your RDP port to only trusted IPs through Security Groups, ACLs, or firewalls. For more information see¬†[Tips for securing your EC2 instances (Linux)](http://aws.amazon.com/articles/tips-for-securing-your-ec2-instance/).
 
 ## UnauthorizedAccess:EC2/SSHBruteForce
+
+**OPSEC Guidelines**
 
 **An EC2 instance has been involved in SSH brute force attacks.**
 
@@ -414,6 +472,8 @@ If your instance&#39;s¬† **Resource Role** ¬†is¬†ACTOR, this indicates 
 
 ## UnauthorizedAccess:EC2/TorClient
 
+**OPSEC Guidelines**
+
 **Your EC2 instance is making connections to a Tor Guard or an Authority node.**
 
 **Default severity: High**
@@ -425,6 +485,8 @@ This finding informs you that an EC2 instance in your AWS environment is making 
 If this activity is unexpected, your instance is likely compromised, see¬†[Remediating a compromised EC2 instance](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_remediate.html#compromised-ec2).
 
 ## UnauthorizedAccess:EC2/TorRelay
+
+**OPSEC Guidelines**
 
 **Your EC2 instance is making connections to a Tor network as a Tor relay.**
 
