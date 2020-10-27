@@ -136,6 +136,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- Try to use common ports. 
+
 **An EC2 instance is communicating with a remote host on an unusual server port.**
 
 **Default severity: Medium**
@@ -149,6 +151,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Behavior:EC2/TrafficVolumeUnusual
 
 **OPSEC Guidelines**
+
+- Stagger exfiltration of data in order to limit noticeable spikes. 
 
 **An EC2 instance is generating unusually large amounts of network traffic to a remote host.**
 
@@ -164,6 +168,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is querying an IP address that is associated with cryptocurrency-related activity.**
 
 **Default severity: High**
@@ -177,6 +183,8 @@ If you use this EC2 instance to mine or manage cryptocurrency, or this instance 
 ## CryptoCurrency:EC2/BitcoinTool.B!DNS
 
 **OPSEC Guidelines**
+
+ - NA
 
 **An EC2 instance is querying a domain name that is associated with cryptocurrency-related activity.**
 
@@ -192,6 +200,8 @@ If you use this EC2 instance to mine or manage cryptocurrency, or this instance 
 
 **OPSEC Guidelines**
 
+- Limit port scanning from a compromised EC2 instance. 
+
 **An EC2 instance is probing a port on a large number of IP addresses.**
 
 **Default severity: High**
@@ -205,6 +215,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Impact:EC2/WinRMBruteForce
 
 **OPSEC Guidelines**
+
+- If need to perform a WinRM brute force attack, first move to an internal Windows host so to blend in a little better. Preferably, do not use bruteforcing. 
 
 **An EC2 instance is performing an outbound Windows Remote Management brute force attack.**
 
@@ -220,6 +232,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance has an unprotected EMR related port which is being probed by a known malicious host.**
 
 **Default severity: High**
@@ -233,6 +247,8 @@ You should block open access to ports on clusters from the internet and restrict
 ## Recon:EC2/PortProbeUnprotectedPort
 
 **OPSEC Guidelines**
+
+- NA
 
 **An EC2 instance has an unprotected port that is being probed by a known malicious host.**
 
@@ -256,6 +272,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- Limit attacking external infrastructure from compromised EC2 instances. 
+
 **An EC2 instance is performing outbound port scans to a remote host.**
 
 **Default severity: Medium**
@@ -272,6 +290,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is attempting to communicate with an IP address of a remote host that is a known black hole.**
 
 **Default severity: Medium**
@@ -286,6 +306,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is querying a domain name that is being redirected to a black hole IP address.**
 
 **Default severity: Medium**
@@ -299,6 +321,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Trojan:EC2/DGADomainRequest.B
 
 **OPSEC Guidelines**
+
+- Use categorized and "readable" domain names for Command and Control traffic.
 
 **An EC2 instance is querying algorithmically generated domains. Such domains are commonly used by malware and could be an indication of a compromised EC2 instance.**
 
@@ -320,6 +344,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- Use categorized and "readable" domain names for Command and Control traffic.
+
 **An EC2 instance is querying algorithmically generated domains. Such domains are commonly used by malware and could be an indication of a compromised EC2 instance.**
 
 **Default severity: High**
@@ -340,6 +366,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- Keep DNS C2 traffic to a minumum. For example, try not to exfiltrate data over a DNS C2 channel. 
+
 **An EC2 instance is exfiltrating data through DNS queries.**
 
 **Default severity: High**
@@ -353,6 +381,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Trojan:EC2/DriveBySourceTraffic!DNS
 
 **OPSEC Guidelines**
+
+- NA
 
 **An EC2 instance is querying a domain name of a remote host that is a known source of Drive-By download attacks.**
 
@@ -368,6 +398,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is attempting to communicate with an IP address of a remote host that is known to hold credentials and other stolen data captured by malware.**
 
 **Default severity: Medium**
@@ -381,6 +413,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Trojan:EC2/DropPoint!DNS
 
 **OPSEC Guidelines**
+
+- NA
 
 **An EC2 instance is querying a domain name of a remote host that is known to hold credentials and other stolen data captured by malware.**
 
@@ -396,6 +430,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is querying domains involved in phishing attacks. Your EC2 instance might be compromised.**
 
 **Default severity: High**
@@ -410,6 +446,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- Make sure your phishing infrastrucutre is separated from your C&C infrastructure.
+
 **An EC2 instance is making connections to an IP address on a custom threat list.**
 
 **Default severity: Medium**
@@ -423,6 +461,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## UnauthorizedAccess:EC2/MetadataDNSRebind
 
 **OPSEC Guidelines**
+
+- Limit queries to the metadata IP. If needed, use the legitimate IP: 169.254.169.254. If attempting to exploit an SSRF, and the metadata IP is blocked, this alert will trigger if you register your own domain name which resolves to the metadata IP. 
 
 **An EC2 instance is performing DNS lookups that resolve to the instance metadata service.**
 
@@ -444,6 +484,8 @@ Some AWS customers intentionally map the metadata IP address to a domain name on
 
 **OPSEC Guidelines**
 
+- Do not perform RDP brute forcing from compromised EC2 instances.
+
 **An EC2 instance has been involved in RDP brute force attacks.**
 
 **Default severity: Low\***
@@ -463,6 +505,8 @@ If your instance&#39;s¬† **Resource Role** ¬†is¬†TARGET, this finding c
 ## UnauthorizedAccess:EC2/SSHBruteForce
 
 **OPSEC Guidelines**
+
+- Do not perform SSH brute forcing from EC2 instnaces if possible. 
 
 **An EC2 instance has been involved in SSH brute force attacks.**
 
@@ -490,6 +534,8 @@ If your instance&#39;s¬† **Resource Role** ¬†is¬†ACTOR, this indicates 
 
 **OPSEC Guidelines**
 
+- NA
+
 **Your EC2 instance is making connections to a Tor Guard or an Authority node.**
 
 **Default severity: High**
@@ -503,6 +549,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## UnauthorizedAccess:EC2/TorRelay
 
 **OPSEC Guidelines**
+
+- NA
 
 **Your EC2 instance is making connections to a Tor network as a Tor relay.**
 
