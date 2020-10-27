@@ -4,6 +4,8 @@
 
 **OPSEC Guidelines**
 
+- Do not use the default Kali Linux user agents. 
+
 **Default severity: Medium**
 
 This finding informs you that a machine running Kali Linux is making API calls using credentials that belong to the listed AWS account in your environment. Kali Linux is a popular penetration testing tool that security professionals use to identify weaknesses in EC2 instances that require patching. Attackers also use this tool to find EC2 configuration weaknesses and gain unauthorized access to your AWS environment.
@@ -15,6 +17,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## PenTest:IAMUser/ParrotLinux
 
 **OPSEC Guidelines**
+
+- Do not use the default Parrot Linux user agents.
 
 **An API was invoked from a Parrot Security Linux machine.**
 
@@ -30,6 +34,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Do not use the default Pentoo Linux user agents.
+
 **An API was invoked from a Pentoo Linux machine.**
 
 **Default severity: Medium**
@@ -43,6 +49,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## Persistence:IAMUser/NetworkPermissions
 
 **OPSEC Guidelines**
+
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
 
 **An IAM entity invoked an API commonly used to change the network access permissions for security groups, routes, and ACLs in your AWS account.**
 
@@ -64,6 +72,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
+
 **A principal invoked an API commonly used to change the security access policies of various resources in your AWS account.**
 
 **Default severity: Medium\***
@@ -83,6 +93,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## Persistence:IAMUser/UserPermissions
 
 **OPSEC Guidelines**
+
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
 
 **A principal invoked an API commonly used to add, modify, or delete IAM users, groups or policies in your AWS account.**
 
@@ -104,6 +116,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Do not use Root credentials if possible. If you must, perform actions that the Root account has performed in the past. 
+
 **An API was invoked using root credentials.**
 
 **Default severity: Low**
@@ -121,6 +135,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## PrivilegeEscalation:IAMUser/AdministrativePermissions
 
 **OPSEC Guidelines**
+
+- Before performing actions in AWS, confirm current roles and permissions. Make sure actions being attempted are allowed under the current policies.
 
 **A principal has attempted to assign a highly permissive policy to themselves.**
 
@@ -142,6 +158,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure your infrastructure abides by role seperation. Use different infrastrucutre, or at least different egress IP's for different stages.
+
 **An API was invoked from a known malicious IP address.**
 
 **Default severity: Medium**
@@ -156,6 +174,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure your infrastructure abides by role seperation. Use different infrastrucutre, or at least different egress IP's for different stages.
+
 **An API was invoked from a known malicious IP address.**
 
 **Default severity: Medium**
@@ -169,6 +189,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## Recon:IAMUser/NetworkPermissions
 
 **OPSEC Guidelines**
+
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
 
 **A principal invoked an API commonly used to change the network access permissions for security groups, routes, and ACLs in your AWS account.**
 
@@ -190,6 +212,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
+
 **A principal invoked an API commonly used to change the security access policies of various resources in your AWS account.**
 
 **Default severity: Medium\***
@@ -210,6 +234,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- NA
+
 **An API was invoked from a Tor exit node IP address.**
 
 **Default severity: Medium**
@@ -223,6 +249,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## Recon:IAMUser/UserPermissions
 
 **OPSEC Guidelines**
+
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
 
 **A principal invoked an API commonly used to add, modify, or delete IAM users, groups or policies in your AWS account.**
 
@@ -244,6 +272,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure when calling AWS API's using compromised credentals, the credentials fit the action. 
+
 **A principal invoked an API commonly used to launch Compute resources like EC2 Instances.**
 
 **Default severity: Medium\***
@@ -262,6 +292,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Do not disable the CloudTrail log if possible. If needed, after malicous actions are complete, delete the S3 bucket that stores the log. This will still trigger this alarm, but that malicous actions will be complete already. 
+
 **AWS CloudTrail trail was disabled.**
 
 **Default severity: Low**
@@ -275,6 +307,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## Stealth:IAMUser/LoggingConfigurationModified
 
 **OPSEC Guidelines**
+
+- Do not disable the CloudTrail log if possible. If needed, after malicous actions are complete, delete the S3 bucket that stores the log. This will still trigger this alarm, but that malicous actions will be complete already.  
 
 **A principal invoked an API commonly used to stop CloudTrail Logging, delete existing logs, and otherwise eliminate traces of activity in your AWS account.**
 
@@ -294,6 +328,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Try not to weaken the security of your target. 
+
 **Account password policy was weakened.**
 
 **Default severity: Low**
@@ -307,6 +343,9 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## UnauthorizedAccess:IAMUser/ConsoleLogin
 
 **OPSEC Guidelines**
+
+- If at all possible, work from the AWS CLI. Unless victim does not work from CLI typically. 
+- Do not create console logins for temporary AWS credentials stolen from an EC2 instance.
 
 **An unusual console login by a principal in your AWS account was observed.**
 
@@ -328,6 +367,9 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- If using stolen credentials, use a VPN from a similar location as your victim.
+- Pivot through victim if possible. 
+
 **Multiple worldwide successful console logins were observed.**
 
 **Default severity: Medium**
@@ -341,6 +383,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration
 
 **OPSEC Guidelines**
+
+- If using stolen AWS EC2 credentials, use them from an EC2 instance. 
 
 **Credentials that were created exclusively for an EC2 instance through an Instance launch role are being used from an external IP address.**
 
@@ -362,6 +406,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- NA
+
 **An API was invoked from a known malicious IP address.**
 
 **Default severity: Medium**
@@ -376,6 +422,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 
 **OPSEC Guidelines**
 
+- Make sure your infrastructure abides by role seperation. Use different infrastrucutre, or at least different egress IP's for different stages.
+
 **An API was invoked from an IP address on a custom threat list.**
 
 **Default severity: Medium**
@@ -389,6 +437,8 @@ If this activity is unexpected your credentials may be compromised, see¬†[Rem
 ## UnauthorizedAccess:IAMUser/TorIPCaller
 
 **OPSEC Guidelines**
+
+- NA
 
 **An API was invoked from a Tor exit node IP address.**
 
