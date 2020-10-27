@@ -4,8 +4,8 @@ Guardduty is AWS's security monitoring service that analyzes VPC Flow Logs, AWS 
 
 
 
-| FINDING TYPE                                              | THREAT PURPOSE      | RESOURCE | SEVERITY |
-|-----------------------------------------------------------|---------------------|----------|----------|
+| FINDING TYPE                                              | THREAT PURPOSE      | RESOURCE | SEVERITY | BYPASS |
+|-----------------------------------------------------------|---------------------|----------|----------|--------|
 | Backdoor:EC2/C&CActivity.B!DNS                            | Backdoor            | EC2      | High     |
 | Backdoor:EC2/DenialOfService.Dns                          | Backdoor            | EC2      | High     |
 | Backdoor:EC2/DenialOfService.Tcp                          | Backdoor            | EC2      | High     |
