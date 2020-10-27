@@ -4,6 +4,10 @@
 
 **OPSEC Guidelines**
 
+- Make sure your C2 servers are behind Load Balancers or redirectors.
+- Leverage tools such as mod_rewrite to restrict and control expectedtraffic to your C2 servers.
+- Use CDN's or Domain Fronting as redirectors. https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki#domain-fronting
+
 **Default severity: High**
 
 This finding informs you that the listed instance within your AWS environment is querying a domain name associated with a known command and control (C&amp;C) server. The listed instance might be compromised. Command and control servers are computers that issue commands to members of a botnet. A botnet is a collection of internet-connected devices which might include PCs, servers, mobile devices, and Internet of Things devices, that are infected and controlled by a common type of malware. Botnets are often used to distribute malware and gather misappropriated information, such as credit card numbers. Depending on the purpose and structure of the botnet, the C&amp;C server might also issue commands to begin a distributed denial-of-service (DDoS) attack.
@@ -22,6 +26,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **Default severity: High**
 
 This finding informs you that the listed EC2 instance within your AWS environment is generating a large volume of outbound DNS traffic. This may indicate that the listed instance is compromised and being used to perform denial-of-service (DoS) attacks using DNS protocol.
@@ -37,6 +43,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Backdoor:EC2/DenialOfService.Tcp
 
 **OPSEC Guidelines**
+
+- NA
 
 **An EC2 instance is behaving in a manner indicating it is being used to perform a Denial of Service (DoS) attack using the TCP protocol.**
 
@@ -56,6 +64,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is behaving in a manner indicating it is being used to perform a Denial of Service (DoS) attack using the UDP protocol.**
 
 **Default severity: High**
@@ -73,6 +83,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Backdoor:EC2/DenialOfService.UdpOnTcpPorts
 
 **OPSEC Guidelines**
+
+- NA
 
 **An EC2 instance is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using the UDP protocol on a TCP port.**
 
@@ -92,6 +104,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 
 **OPSEC Guidelines**
 
+- NA
+
 **An EC2 instance is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using an unusual protocol.**
 
 **Default severity: High**
@@ -105,6 +119,8 @@ If this activity is unexpected, your instance is likely compromised, see¬†[Re
 ## Backdoor:EC2/Spambot
 
 **OPSEC Guidelines**
+
+- If performing phishing using an internal SMTP relay accessible to a compromised EC2 instance, attempt to move to a server that _should_ be talking to the SMTP relay.
 
 **An EC2 instance is exhibiting unusual behavior by communicating with a remote host on port 25.**
 
