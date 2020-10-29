@@ -1,6 +1,8 @@
-# guardduty-opsec
+# GuardDuty Opsec Considerations
 
-Guardduty is AWS's security monitoring service that analyzes VPC Flow Logs, AWS CloudTrail management event logs, Cloudtrail S3 event logs and DNS logs. Typically, its the lowest bar for monitoring in an AWS environment, but can and does trip up attackers, pentesters and red teams. 
+GuardDuty is AWS's security monitoring service that analyzes VPC Flow Logs, AWS CloudTrail management event logs, Cloudtrail S3 event logs and DNS logs. 
+
+Typically, its the lowest bar for monitoring in an AWS environment, but can and does trip up attackers, pentesters and red teams. 
 
 
 | FINDING TYPE  | THREAT PURPOSE | RESOURCE | SEVERITY | 
@@ -90,7 +92,7 @@ https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.h
 **OPSEC Guidelines**
 
 - Make sure your C2 servers are behind Load Balancers or redirectors.
-- Leverage tools such as mod_rewrite to restrict and control expectedtraffic to your C2 servers.
+- Leverage tools such as mod_rewrite to restrict and control expected traffic to your C2 servers.
 - Use CDN's or Domain Fronting as redirectors. https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki#domain-fronting
 
 **Default severity: High**
