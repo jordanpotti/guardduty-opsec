@@ -4,6 +4,7 @@ GuardDuty is AWS's security monitoring service that analyzes VPC Flow Logs, AWS 
 
 Typically, its the lowest bar for monitoring in an AWS environment, but can and does trip up attackers, pentesters and red teams. 
 
+For each GuardDuty Findings, there are opsec considerations one should take to avoid triggering the alert. This is definitely not an all inclusive list, so please make a pull request, or open an issue!
 
 | FINDING TYPE  | THREAT PURPOSE | RESOURCE | SEVERITY | 
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- | -------- | 
