@@ -3,8 +3,8 @@
 Guardduty is AWS's security monitoring service that analyzes VPC Flow Logs, AWS CloudTrail management event logs, Cloudtrail S3 event logs and DNS logs. Typically, its the lowest bar for monitoring in an AWS environment, but can and does trip up attackers, pentesters and red teams. 
 
 
-| FINDING TYPE  | THREAT PURPOSE | RESOURCE | SEVERITY | OPSEC GUIDANCE | 
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- | -------- | -------- |
+| FINDING TYPE  | THREAT PURPOSE | RESOURCE | SEVERITY | 
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- | -------- | 
 | [Backdoor:EC2/C&CActivity.B!DNS](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#backdoor-ec2-ccactivitybdns) | Backdoor | EC2 | High |
 | [Backdoor:EC2/DenialOfService.Dns](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#backdoor-ec2-denialofservicedns) | Backdoor | EC2 | High |
 | [Backdoor:EC2/DenialOfService.Tcp](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#backdoor-ec2-denialofservicetcp) | Backdoor | EC2 | High |
